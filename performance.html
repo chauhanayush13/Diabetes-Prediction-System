@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<h1>Diabetes Ratio</h1>
+
+<style>
+    h1{
+        margin-top:-350px;
+        margin-left:630px;
+    }
+
+    #myChart{
+        margin:auto;
+        margin-top:200px;
+    }
+</style>
+
+<script>
+    
+    const xValues = ["Positive", "Negative"];
+    const yValues = [41430, 58552];
+    const barColors = [
+    "blue",
+    "red",
+    ];
+
+    new Chart("myChart", {
+    type: "pie",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    });
+</script>
+
+</body>
+</html>
+
+{% endblock %}

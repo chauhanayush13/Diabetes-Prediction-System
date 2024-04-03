@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    nav ul {
+            list-style-type: none;
+            width:1460px;
+            height:47px;
+            padding: 7px;
+            overflow: hidden;
+            background-color: #FF3EA5;
+            border-radius:15px;
+        }
+
+        nav ul li {
+            float: left;
+            font-size:17px;
+            font-family:verdana;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav ul li a:hover {
+            background-color: #333A73;
+            border-radius:15px;
+        }
+</style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'performance' %}">Performance</a></li>
+        <li style="margin-left:1155px;"><a href="{% url 'about' %}">About</a></li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

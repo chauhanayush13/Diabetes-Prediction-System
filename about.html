@@ -1,0 +1,77 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Diabetes Prediction Project</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        width:1460px;
+    }
+
+    .container {
+        width: 1430px;
+        height:570px;
+        padding: 20px;
+        background-color:#6DB9EF;
+        border-radius: 8px;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top:-10px;
+    }
+    p {
+        line-height: 1.6;
+        color:red;
+        text-align:justify;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    ul li {
+        margin-bottom: 10px;
+        color:red;
+    }
+    h2 {
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About Diabetes Prediction Project</h1>
+    <p>
+        Welcome to the Diabetes Prediction Project! This project aims to predict the likelihood of an individual developing diabetes based on various factors such as demographic information, lifestyle choices, and medical history.
+    </p>
+    <p>
+        Diabetes is a prevalent chronic disease affecting millions of people worldwide. Early prediction and intervention can help in managing and preventing the onset of diabetes-related complications.
+    </p>
+    <p>
+        Our team of researchers and data scientists has developed machine learning models to analyze and interpret data to predict the risk of diabetes. By inputting relevant information into our prediction tool, users can receive an estimation of their likelihood of developing diabetes.
+    </p>
+    <p>
+        This project is intended for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a healthcare provider for personalized medical advice and treatment.
+    </p>
+    <h2>Project Objectives</h2>
+    <ul>
+        <li>Develop accurate machine learning models for diabetes prediction.</li>
+        <li>Provide users with a user-friendly interface to input relevant data for prediction.</li>
+        <li>Empower individuals to make informed decisions about their health and wellness.</li>
+        <li>Promote awareness and understanding of diabetes risk factors.</li>
+    </ul>
+    <h2>Meet the Team</h2>
+    <p>
+        Our project team consists of dedicated professionals from various backgrounds, including data science, healthcare, and software development. We are passionate about leveraging technology to improve healthcare outcomes and empower individuals to take control of their health.
+    </p>
+</div>
+
+</body>
+</html>
+{% endblock %}

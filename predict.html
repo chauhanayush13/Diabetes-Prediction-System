@@ -1,0 +1,138 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DATA</title>
+
+    <style>
+        body{
+            background: url("{% static 'Diabetes_Prediction/images/img2.jpeg' %}");
+            background-size:cover;
+            background-repeat: no-repeat;
+            height:650px;
+        }
+        .button:active{
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        form{
+            height: 520px;
+            width: 500px;
+            border: 4px solid black;
+            margin: 40px 500px 100px 150px;
+            align-items:center;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.1);
+            filter:drop-shadow(10px 5px 8px pink);
+            padding: 20px;
+        }
+
+        
+        form h1 , td{
+            color: rgb(237, 243, 244);
+        }
+        
+        .box{
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
+        .button{
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size:18px;
+            width: 120px;
+            height:35px;
+            background-color: #FF3EA5;
+            color:white;
+        }
+
+        .button:hover{
+            background-color: rgb(244, 0, 130);
+            transform:scale(1.1);
+        }
+
+        #print{
+            font-size:25px;
+            color:white;
+        }
+
+        /*remove placeholder when click on box*/
+        input:focus::placeholder {
+            color: transparent;
+        }
+
+        input.box:focus {
+            border: 2px solid rgb(244, 61, 171);
+            box-shadow: 0 0 15px rgb(244, 61, 171);
+            transform: scale(1.05);
+            transition: all 0.5s ease;
+        }
+    </style>
+
+</head>
+<body> 
+    <form action="result" method="get">
+        <table border="0" cellspacing="10">
+            <h1 align="center" class='heading' style="font-family:verdana">Enter following details</h1>
+            <tr>
+                <td style="font-family:verdana"> <b>Gender</b></td>
+                <td>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="gender" class="box" style="width: 220px;" required>
+                    <option>Select...</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                    <option value="2">Other</option>
+                </select>
+                </td>
+
+            </tr>
+    
+            <tr>
+                <td style="font-family:verdana"> <b>Age</b></td>
+                <td >: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="age" class="box" placeholder="Enter Age" style="width: 200px;" required> (0-80)<br></td>
+            </tr>
+
+            <tr>
+                <td style="font-family:verdana"> <b>Height</b> <br></td>
+                <td>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="height" class="box" placeholder="Enter weight" style="width: 200px;" required> (10-96)<br></td>
+            </tr>
+
+            <tr>
+                <td style="font-family:verdana"> <b>Weight</b> <br></td>
+                <td>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="weight" class="box" placeholder="Enter weight" style="width: 200px;" required> (10-96)<br></td>
+            </tr>
+
+            <tr>
+                <td style="font-family:verdana"> <b>HbA1c_level</b></td>
+                <td>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="HbA1c_level" class="box"  placeholder="Enter HbA1c_level" style="width: 200px;" required> (3-9)<br></td>
+            </tr>
+
+            <tr>
+                <td style="font-family:verdana"> <b>Glucose level</b></td>
+                <td >: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="glucose" class="box"  placeholder="Enter Glucose level" style="width: 200px;" required> (80-300)<br></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Predict" name="result" class="button">
+                </td>
+            </tr>
+
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td id="print" style="font-family:verdana"> <b>Result :</b></td>
+                <td id ="print" >{{result2}}</td>
+            </tr>
+        </table>
+
+    
+    </form>
+</body>
+</html>
+{% endblock %}
